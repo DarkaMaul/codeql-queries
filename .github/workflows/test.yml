@@ -12,6 +12,8 @@ jobs:
       - uses: actions/checkout@v4
       - id: init
         uses: github/codeql-action/init@v3
+      - name: Setup tmate session
+        uses: mxschmitt/action-tmate@v3
       - name: Run tests
         run: |
           ${{ steps.init.outputs.codeql-path }} test run ./java/test/
